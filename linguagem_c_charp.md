@@ -164,6 +164,7 @@ As palavras reservadas em C# são como os comandos especiais que você pode dar 
 
 Aqui estão as palavras reservadas na linguagem C#:
 
+```
 |-------------------------------|     |----------------------------|
 |       Palavras Reservadas     |     | Palavras-Chave Contextuais |
 |-------------------------------|     |----------------------------|
@@ -208,6 +209,7 @@ Aqui estão as palavras reservadas na linguagem C#:
 | unsafe        |               |     | with                       |       
 |               |               |     | yield                      |
 |-------------------------------|     |----------------------------|
+```
 
 Essas palavras-chave são identificadores reservados predefinidos com significados especiais para o compilador¹. Elas não podem ser usadas como identificadores em seu programa, a não ser que incluam `@` como prefixo¹. Por exemplo, `@if` é um identificador válido, mas `if` não é porque `if` é uma palavra-chave¹.
 
