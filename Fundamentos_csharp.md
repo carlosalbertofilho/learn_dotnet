@@ -856,3 +856,52 @@ do
 
 Neste exemplo, os números de 0 a 4 serão impressos. O bloco de código dentro do loop `do/while` é executado primeiro, e então a condição `i < 5` é verificada. Se a condição for verdadeira, o bloco de código é executado novamente. Isso continua até que a condição se torne falsa.
 
+
+## Métodos e Funções
+
+Em C#, métodos e funções são blocos de código que realizam uma tarefa específica e podem ser chamados quando necessário. Embora os termos "método" e "função" sejam frequentemente usados de forma intercambiável, em C#, geralmente nos referimos a eles como "métodos". Aqui está uma explicação mais detalhada:
+
+### Métodos
+
+Um método é um bloco de código que é declarado dentro de uma classe ou estrutura. Ele tem um nome e pode ter parâmetros e um tipo de retorno. Aqui está um exemplo de um método em C#:
+
+```csharp
+public class Program
+{
+    public static void Main()
+    {
+        SayHello();
+    }
+
+    public static void SayHello()
+    {
+        Console.WriteLine("Olá, mundo!");
+    }
+}
+```
+
+Neste exemplo, `SayHello` é um método que imprime a string "Olá, mundo!" na tela. O método `SayHello` é chamado dentro do método `Main`.
+
+### Parâmetros e Retorno
+
+Os métodos podem ter parâmetros, que são valores passados para o método quando ele é chamado. Além disso, os métodos podem retornar um valor. Aqui está um exemplo:
+
+```csharp
+public class Program
+{
+    public static void Main()
+    {
+        int result = Add(5, 10);
+        Console.WriteLine(result);
+    }
+
+    public static int Add(int a, int b)
+    {
+        return a + b;
+    }
+}
+```
+
+Neste exemplo, o método `Add` tem dois parâmetros, `a` e `b`, e retorna a soma de `a` e `b`. O método `Add` é chamado dentro do método `Main` com os argumentos `5` e `10`, e o resultado é impresso na tela.
+
+
