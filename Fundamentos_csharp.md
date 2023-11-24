@@ -905,3 +905,53 @@ public class Program
 Neste exemplo, o método `Add` tem dois parâmetros, `a` e `b`, e retorna a soma de `a` e `b`. O método `Add` é chamado dentro do método `Main` com os argumentos `5` e `10`, e o resultado é impresso na tela.
 
 
+## Value Types e Reference Types
+
+Em C#, os tipos de dados são divididos em dois grandes grupos: **Value Types** e **Reference Types**. Aqui está uma explicação mais detalhada:
+
+### Value Types
+
+Os Value Types armazenam diretamente o valor na memória. Quando você atribui um Value Type a outra variável, o valor é **copiado** diretamente. Se você alterar o valor da nova variável, a variável original não será afetada. Aqui estão alguns exemplos de Value Types em C#:
+
+- Tipos numéricos, como `int`, `float`, `double`, `decimal`
+- `char`
+- `bool`
+- `enum`
+- `struct`
+
+Aqui está um exemplo de como os Value Types funcionam:
+
+```csharp
+int x = 10;
+int y = x;
+y = 20;
+
+Console.WriteLine(x);  // Imprime: 10
+Console.WriteLine(y);  // Imprime: 20
+```
+
+Neste exemplo, mesmo que `y` seja alterado, o valor de `x` permanece o mesmo.
+
+### Reference Types
+
+Os Reference Types, por outro lado, armazenam uma referência à memória onde o valor está armazenado, em vez do valor real. Quando você atribui um Reference Type a outra variável, a referência é copiada. Se você alterar o valor da nova variável, a variável original também será afetada. Aqui estão alguns exemplos de Reference Types em C#:
+
+- `string`
+- `array`
+- `class`
+- `delegate`
+
+Aqui está um exemplo de como os Reference Types funcionam:
+
+```csharp
+int[] x = {1, 2, 3};
+int[] y = x;
+y[0] = 10;
+
+Console.WriteLine(x[0]);  // Imprime: 10
+Console.WriteLine(y[0]);  // Imprime: 10
+```
+
+Neste exemplo, quando `y[0]` é alterado, `x[0]` também é alterado porque `x` e `y` referem-se ao mesmo local de memória.
+
+
