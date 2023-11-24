@@ -562,6 +562,7 @@ Console.WriteLine(minhaString == null); // Imprime "True"
 Nestes exemplos, `meuInt`, `meuBool`, `meuChar` e `minhaString` são declarados mas não são atribuídos valores. Quando imprimimos essas variáveis, vemos os valores padrões para seus respectivos tipos.
 
 ## Conversões
+
 ### Implícita
 As **conversões implícitas** em C# são uma maneira de converter automaticamente um valor de um tipo para outro tipo sem perder informações. Elas são como traduzir uma frase de uma língua para outra sem perder o significado.
 
@@ -626,3 +627,4 @@ Neste exemplo, `meuDouble` é uma variável do tipo `double` que armazena o valo
 
 No entanto, é importante notar que, assim como o método `Parse`, o método `Convert` também lançará uma exceção se a conversão não for possível. Por exemplo, `Convert.ToInt32("123abc")` resultará em uma exceção porque `"123abc"` não pode ser convertido em um `int`.
 
+## Operadores Aritméticos
