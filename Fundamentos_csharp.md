@@ -1009,7 +1009,7 @@ Embora `structs` e `classes` sejam semelhantes, existem algumas diferenças impo
 
 Em C#, um `enum` (enumeration) é um tipo de valor que permite definir um conjunto de constantes nomeadas. Aqui está uma explicação mais detalhada:
 
-## Definindo um Enum
+### Definindo um Enum
 
 Um `enum` é definido usando a palavra-chave `enum`. Aqui está um exemplo de um `enum` em C#:
 
@@ -1028,7 +1028,7 @@ public enum DiasDaSemana
 
 Neste exemplo, `DiasDaSemana` é um `enum` que tem sete membros, representando os dias da semana.
 
-## Usando um Enum
+### Usando um Enum
 
 Um `enum` pode ser usado da seguinte maneira:
 
@@ -1037,7 +1037,7 @@ DiasDaSemana hoje = DiasDaSemana.Sexta;
 Console.WriteLine(hoje);  // Imprime: Sexta
 ```
 
-## Valores de Enum
+### Valores de Enum
 
 Por padrão, o primeiro membro de um `enum` tem o valor `0`, e o valor de cada membro subsequente é incrementado em `1`. No entanto, você pode atribuir explicitamente valores a membros de um `enum`. Aqui está um exemplo:
 
