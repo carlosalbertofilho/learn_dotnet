@@ -958,7 +958,7 @@ Neste exemplo, quando `y[0]` é alterado, `x[0]` também é alterado porque `x` 
 ## Structs
 Em C#, uma `struct` é um tipo de valor que pode conter vários campos e métodos. Ela é semelhante a uma `class`, mas existem algumas diferenças importantes. Aqui está uma explicação mais detalhada:
 
-## Definindo uma Struct
+### Definindo uma Struct
 
 Uma `struct` é definida de maneira semelhante a uma `class`. Aqui está um exemplo de uma `struct` em C#:
 
@@ -1005,6 +1005,54 @@ Embora `structs` e `classes` sejam semelhantes, existem algumas diferenças impo
 - **Inheritance**: Uma `struct` não pode herdar de outra `struct` ou `class`, e não pode ser a base de uma `class`. Uma `struct` pode, no entanto, implementar interfaces.
 
 
-
 ## Enums
+
+Em C#, um `enum` (enumeration) é um tipo de valor que permite definir um conjunto de constantes nomeadas. Aqui está uma explicação mais detalhada:
+
+## Definindo um Enum
+
+Um `enum` é definido usando a palavra-chave `enum`. Aqui está um exemplo de um `enum` em C#:
+
+```csharp
+public enum DiasDaSemana
+{
+    Domingo,
+    Segunda,
+    Terça,
+    Quarta,
+    Quinta,
+    Sexta,
+    Sábado
+}
+```
+
+Neste exemplo, `DiasDaSemana` é um `enum` que tem sete membros, representando os dias da semana.
+
+## Usando um Enum
+
+Um `enum` pode ser usado da seguinte maneira:
+
+```csharp
+DiasDaSemana hoje = DiasDaSemana.Sexta;
+Console.WriteLine(hoje);  // Imprime: Sexta
+```
+
+## Valores de Enum
+
+Por padrão, o primeiro membro de um `enum` tem o valor `0`, e o valor de cada membro subsequente é incrementado em `1`. No entanto, você pode atribuir explicitamente valores a membros de um `enum`. Aqui está um exemplo:
+
+```csharp
+public enum DiasDaSemana
+{
+    Domingo = 1,
+    Segunda = 2,
+    Terça = 3,
+    Quarta = 4,
+    Quinta = 5,
+    Sexta = 6,
+    Sábado = 7
+}
+```
+
+Neste exemplo, `Domingo` tem o valor `1`, `Segunda` tem o valor `2`, e assim por diante.
 
