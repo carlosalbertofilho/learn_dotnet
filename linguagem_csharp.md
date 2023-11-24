@@ -503,4 +503,126 @@ Console.WriteLine(minhaIdade); // Imprime "25"
 
 Neste exemplo, `minhaIdade` é uma variável do tipo `int?` que inicialmente armazena `null`. Quando imprimimos `minhaIdade`, não vemos nada na tela porque `minhaIdade` é `null`. Em seguida, atribuímos `25` a `minhaIdade` e imprimimos `minhaIdade` novamente, desta vez vemos `25` na tela.
 
+## Alias
+
+Os **alias** em C# são uma maneira de criar um novo nome para um tipo existente. Eles são úteis quando você quer usar um tipo que tem um nome longo ou complicado, mas prefere usar um nome mais curto ou mais fácil de lembrar.
+
+Você cria um alias em C# usando a palavra-chave `using` seguida pelo nome do alias que você quer criar e o nome do tipo existente. Por exemplo:
+
+```csharp
+using Numero = System.Int32;
+```
+
+Neste exemplo, `Numero` é um alias para o tipo `System.Int32`. Agora, sempre que quisermos usar um `System.Int32`, podemos simplesmente usar `Numero` em vez disso.
+
+Aqui está um exemplo de como você pode usar um alias em seu código:
+
+```csharp
+using Numero = System.Int32;
+
+class Programa
+{
+    static void Main()
+    {
+        Numero meuNumero = 10;
+        System.Console.WriteLine(meuNumero); // Imprime "10"
+    }
+}
+```
+
+Neste exemplo, `meuNumero` é uma variável do tipo `Numero`, que é um alias para `System.Int32`. Quando imprimimos `meuNumero`, vemos o valor `10` na tela.
+
+
+## Valores padrão
+Em C#, quando você declara uma variável mas não atribui um valor a ela, o compilador C# automaticamente atribui um **valor padrão** a essa variável. O valor padrão depende do tipo da variável.
+
+Aqui estão os valores padrões para alguns dos tipos mais comuns em C#:
+
+- Para tipos numéricos como `int`, `float`, `double`, etc., o valor padrão é `0`.
+- Para o tipo `bool`, o valor padrão é `false`.
+- Para o tipo `char`, o valor padrão é `\0` (um caractere nulo).
+- Para tipos de referência como classes, interfaces, delegates, etc., o valor padrão é `null`.
+
+Aqui estão alguns exemplos de como os valores padrões funcionam em C#:
+
+```csharp
+int meuInt;
+Console.WriteLine(meuInt); // Imprime "0"
+
+bool meuBool;
+Console.WriteLine(meuBool); // Imprime "False"
+
+char meuChar;
+Console.WriteLine(meuChar == '\0'); // Imprime "True"
+
+string minhaString;
+Console.WriteLine(minhaString == null); // Imprime "True"
+```
+
+Nestes exemplos, `meuInt`, `meuBool`, `meuChar` e `minhaString` são declarados mas não são atribuídos valores. Quando imprimimos essas variáveis, vemos os valores padrões para seus respectivos tipos.
+
+## Conversões
+### Implícita
+As **conversões implícitas** em C# são uma maneira de converter automaticamente um valor de um tipo para outro tipo sem perder informações. Elas são como traduzir uma frase de uma língua para outra sem perder o significado.
+
+Por exemplo, você pode converter implicitamente um `int` para um `long` porque o `long` pode representar todos os valores que um `int` pode representar e mais. Aqui está um exemplo:
+
+```csharp
+int meuInt = 1000;
+long meuLong = meuInt; // Conversão implícita de int para long
+```
+
+Neste exemplo, `meuInt` é uma variável do tipo `int` que armazena o valor `1000`. Em seguida, atribuímos `meuInt` a `meuLong`, que é uma variável do tipo `long`. Isso é uma conversão implícita de `int` para `long`.
+
+No entanto, nem todas as conversões são possíveis de forma implícita. Por exemplo, você não pode converter implicitamente um `long` para um `int` porque um `long` pode representar valores que um `int` não pode representar. Tentar fazer isso resultaria em um erro de compilação.
+
+
+### Explícita
+As **conversões explícitas** em C#, também conhecidas como **castings**, são uma maneira de converter um valor de um tipo para outro tipo quando a conversão não é segura e pode resultar na perda de dados. É como tentar encaixar uma peça grande em uma caixa menor - você pode ter que cortar parte da peça para que ela caiba.
+
+Por exemplo, você pode converter explicitamente um `double` para um `int`, mas você pode perder a parte decimal do `double`. Aqui está um exemplo:
+
+```csharp
+double meuDouble = 123.45;
+int meuInt = (int)meuDouble; // Conversão explícita de double para int
+Console.WriteLine(meuInt); // Imprime "123"
+```
+
+Neste exemplo, `meuDouble` é uma variável do tipo `double` que armazena o valor `123.45`. Em seguida, fazemos um casting de `meuDouble` para `int` e atribuímos o resultado a `meuInt`. Isso é uma conversão explícita de `double` para `int`. Quando imprimimos `meuInt`, vemos o valor `123` na tela, porque a parte decimal do `double` foi perdida na conversão.
+
+As conversões explícitas são úteis quando você sabe o que está fazendo e está ciente de que a conversão pode resultar na perda de dados.
+
+
+### Parse
+O método **Parse** em C# é usado para converter uma string em um tipo de dados específico. É como traduzir uma frase de uma língua para outra.
+
+Por exemplo, se você tem uma string que representa um número, como `"123"`, e quer usar esse número em um cálculo, você precisa converter a string em um número. Você pode fazer isso usando o método `Parse`.
+
+Aqui estão alguns exemplos de como você pode usar o método `Parse` em C#:
+
+```csharp
+string minhaString = "123";
+int meuInt = int.Parse(minhaString);
+Console.WriteLine(meuInt + 1); // Imprime "124"
+```
+
+Neste exemplo, `minhaString` é uma string que contém o valor `"123"`. Usamos `int.Parse(minhaString)` para converter `minhaString` em um `int` e armazenamos o resultado na variável `meuInt`. Agora podemos usar `meuInt` em cálculos, como adicionar 1 a ele.
+
+No entanto, é importante notar que o método `Parse` lançará uma exceção se a string que você está tentando analisar não puder ser convertida no tipo desejado. Por exemplo, `int.Parse("123abc")` resultará em uma exceção porque `"123abc"` não pode ser convertido em um `int`.
+
+
+### Convert
+O método **Convert** em C# é usado para converter um tipo de dados em outro. Ele é semelhante ao método `Parse`, mas é mais versátil porque pode lidar com uma variedade maior de conversões.
+
+Por exemplo, você pode usar o método `Convert` para converter um `double` em um `int`. Aqui está um exemplo:
+
+```csharp
+double meuDouble = 123.45;
+int meuInt = Convert.ToInt32(meuDouble);
+Console.WriteLine(meuInt); // Imprime "123"
+```
+
+Neste exemplo, `meuDouble` é uma variável do tipo `double` que armazena o valor `123.45`. Usamos `Convert.ToInt32(meuDouble)` para converter `meuDouble` em um `int` e armazenamos o resultado na variável `meuInt`. Quando imprimimos `meuInt`, vemos o valor `123` na tela, porque a parte decimal do `double` foi perdida na conversão.
+
+No entanto, é importante notar que, assim como o método `Parse`, o método `Convert` também lançará uma exceção se a conversão não for possível. Por exemplo, `Convert.ToInt32("123abc")` resultará em uma exceção porque `"123abc"` não pode ser convertido em um `int`.
 
