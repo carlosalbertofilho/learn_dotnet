@@ -768,3 +768,91 @@ bool naoVerdade = !(5 > 3); // naoVerdade é falso porque a condição (5 > 3) �
 
 Esses operadores lógicos são frequentemente usados em instruções condicionais (`if`, `else if`, `while`, etc.) para combinar ou inverter condições.
 
+## Estruturas Condicionais
+
+As estruturas condicionais permitem que o código seja executado com base em uma condição. As duas principais estruturas condicionais em C# são `if` e `switch`.
+
+### If
+
+A estrutura `if` permite que o código seja executado se uma determinada condição for verdadeira. Aqui está um exemplo:
+
+```csharp
+int x = 10;
+if (x > 5)
+{
+    Console.WriteLine("x é maior que 5");
+}
+```
+
+Neste exemplo, a mensagem "x é maior que 5" será impressa porque a condição `x > 5` é verdadeira.
+
+### Switch
+
+A estrutura `switch` permite que o código seja executado com base em vários casos. Aqui está um exemplo:
+
+```csharp
+int x = 10;
+switch (x)
+{
+    case 5:
+        Console.WriteLine("x é 5");
+        break;
+    case 10:
+        Console.WriteLine("x é 10");
+        break;
+    default:
+        Console.WriteLine("x não é 5 nem 10");
+        break;
+}
+```
+
+Neste exemplo, a mensagem "x é 10" será impressa porque `x` corresponde ao caso `10`.
+
+## Loops
+
+Os loops permitem que o código seja executado repetidamente. Os dois principais tipos de loops em C# são `for` e `while`.
+
+### For
+
+O loop `for` permite que o código seja executado um número específico de vezes. Aqui está um exemplo:
+
+```csharp
+for (int i = 0; i < 5; i++)
+{
+    Console.WriteLine(i);
+}
+```
+
+Neste exemplo, os números de 0 a 4 serão impressos.
+
+### While
+
+O loop `while` permite que o código seja executado enquanto uma condição for verdadeira. Aqui está um exemplo:
+
+```csharp
+int i = 0;
+while (i < 5)
+{
+    Console.WriteLine(i);
+    i++;
+}
+```
+
+Neste exemplo, os números de 0 a 4 também serão impressos.
+
+### Do/While
+O loop `do/while` é uma estrutura de controle de fluxo em C# que permite que um bloco de código seja executado repetidamente. A diferença entre o loop `do/while` e o loop `while` é que o loop `do/while` verifica a condição **depois** de executar o bloco de código, garantindo que o bloco de código seja executado pelo menos uma vez.
+
+Aqui está um exemplo de como o loop `do/while` funciona:
+
+```csharp
+int i = 0;
+do
+{
+    Console.WriteLine(i);
+    i++;
+} while (i < 5);
+```
+
+Neste exemplo, os números de 0 a 4 serão impressos. O bloco de código dentro do loop `do/while` é executado primeiro, e então a condição `i < 5` é verificada. Se a condição for verdadeira, o bloco de código é executado novamente. Isso continua até que a condição se torne falsa.
+
