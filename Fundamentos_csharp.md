@@ -955,3 +955,56 @@ Console.WriteLine(y[0]);  // Imprime: 10
 Neste exemplo, quando `y[0]` é alterado, `x[0]` também é alterado porque `x` e `y` referem-se ao mesmo local de memória.
 
 
+## Structs
+Em C#, uma `struct` é um tipo de valor que pode conter vários campos e métodos. Ela é semelhante a uma `class`, mas existem algumas diferenças importantes. Aqui está uma explicação mais detalhada:
+
+## Definindo uma Struct
+
+Uma `struct` é definida de maneira semelhante a uma `class`. Aqui está um exemplo de uma `struct` em C#:
+
+```csharp
+public struct Point
+{
+    public int X;
+    public int Y;
+
+    public Point(int x, int y)
+    {
+        X = x;
+        Y = y;
+    }
+
+    public void Move(int dx, int dy)
+    {
+        X += dx;
+        Y += dy;
+    }
+}
+```
+
+Neste exemplo, `Point` é uma `struct` que tem dois campos, `X` e `Y`, um construtor e um método `Move`.
+
+### Usando uma Struct
+
+Uma `struct` pode ser usada da seguinte maneira:
+
+```csharp
+Point p = new Point(10, 20);
+p.Move(5, 10);
+Console.WriteLine($"X: {p.X}, Y: {p.Y}");  // Imprime: X: 15, Y: 30
+```
+
+### Diferenças entre Struct e Class
+
+Embora `structs` e `classes` sejam semelhantes, existem algumas diferenças importantes:
+
+- **Value Type vs Reference Type**: Uma `struct` é um tipo de valor, o que significa que quando é atribuída a uma nova variável ou passada como um argumento para um método, uma cópia do valor é feita. Por outro lado, uma `class` é um tipo de referência, o que significa que quando é atribuída a uma nova variável ou passada como um argumento para um método, uma referência ao objeto original é usada.
+
+- **Nullability**: Uma `struct` não pode ser `null`, enquanto uma `class` pode.
+
+- **Inheritance**: Uma `struct` não pode herdar de outra `struct` ou `class`, e não pode ser a base de uma `class`. Uma `struct` pode, no entanto, implementar interfaces.
+
+
+
+## Enums
+
