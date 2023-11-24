@@ -669,3 +669,102 @@ int x = 5;
 x--; // x agora é igual a 4
 ```
 
+## Operadores de atribuição
+Os **operadores de atribuição** em C# são usados para atribuir valores a variáveis. O operador de atribuição mais básico é o `=`, que simplesmente atribui o valor à direita do operador à variável à esquerda do operador.
+
+Aqui está um exemplo:
+
+```csharp
+int x = 10; // A variável 'x' recebe o valor 10
+```
+
+No entanto, existem também operadores de atribuição compostos que realizam uma operação aritmética e uma atribuição ao mesmo tempo. Aqui estão alguns exemplos:
+
+- `+=`: Adiciona o valor à direita do operador ao valor da variável e atribui o resultado à variável. Por exemplo:
+```csharp
+x += 5; // É o mesmo que x = x + 5
+```
+
+- `-=`: Subtrai o valor à direita do operador do valor da variável e atribui o resultado à variável. Por exemplo:
+```csharp
+x -= 5; // É o mesmo que x = x - 5
+```
+
+- `*=`: Multiplica o valor da variável pelo valor à direita do operador e atribui o resultado à variável. Por exemplo:
+```csharp
+x *= 5; // É o mesmo que x = x * 5
+```
+
+- `/=`: Divide o valor da variável pelo valor à direita do operador e atribui o resultado à variável. Por exemplo:
+```csharp
+x /= 5; // É o mesmo que x = x / 5
+```
+
+- `%=`: Calcula o resto da divisão do valor da variável pelo valor à direita do operador e atribui o resultado à variável. Por exemplo:
+```csharp
+x %= 5; // É o mesmo que x = x % 5
+```
+
+Esses operadores de atribuição compostos podem tornar seu código mais conciso e fácil de ler.
+
+
+## Operadores de comparação
+Os **operadores de comparação** em C# são usados para comparar dois valores. Eles são como uma balança que pode dizer se um valor é maior, menor ou igual a outro valor.
+
+Aqui estão os operadores de comparação mais comuns em C#:
+
+- `==` (Igual a): Verifica se dois valores são iguais. Por exemplo:
+```csharp
+bool saoIguais = (5 == 5); // saoIguais é verdadeiro
+```
+
+- `!=` (Diferente de): Verifica se dois valores são diferentes. Por exemplo:
+```csharp
+bool saoDiferentes = (5 != 3); // saoDiferentes é verdadeiro
+```
+
+- `>` (Maior que): Verifica se o valor à esquerda do operador é maior que o valor à direita. Por exemplo:
+```csharp
+bool eMaior = (5 > 3); // eMaior é verdadeiro
+```
+
+- `<` (Menor que): Verifica se o valor à esquerda do operador é menor que o valor à direita. Por exemplo:
+```csharp
+bool eMenor = (3 < 5); // eMenor é verdadeiro
+```
+
+- `>=` (Maior ou igual a): Verifica se o valor à esquerda do operador é maior ou igual ao valor à direita. Por exemplo:
+```csharp
+bool eMaiorOuIgual = (5 >= 5); // eMaiorOuIgual é verdadeiro
+```
+
+- `<=` (Menor ou igual a): Verifica se o valor à esquerda do operador é menor ou igual ao valor à direita. Por exemplo:
+```csharp
+bool eMenorOuIgual = (5 <= 5); // eMenorOuIgual é verdadeiro
+```
+
+Esses operadores de comparação são frequentemente usados em instruções condicionais (`if`, `else if`, `while`, etc.) para controlar o fluxo do programa.
+
+
+## Operadores Lógicos
+Os **operadores lógicos** em C# são usados para combinar ou inverter valores booleanos. Eles são como as palavras "e", "ou" e "não" em uma frase.
+
+Aqui estão os operadores lógicos mais comuns em C#:
+
+- `&&` (E lógico): Retorna `true` se ambos os operandos forem `true`. Por exemplo:
+```csharp
+bool eVerdade = (5 > 3) && (2 < 3); // eVerdade é verdadeiro porque ambas as condições são verdadeiras
+```
+
+- `||` (OU lógico): Retorna `true` se pelo menos um dos operandos for `true`. Por exemplo:
+```csharp
+bool ouVerdade = (5 > 3) || (2 > 3); // ouVerdade é verdadeiro porque pelo menos uma das condições é verdadeira
+```
+
+- `!` (NÃO lógico): Inverte o valor booleano. Por exemplo:
+```csharp
+bool naoVerdade = !(5 > 3); // naoVerdade é falso porque a condição (5 > 3) é verdadeira, mas nós a invertemos
+```
+
+Esses operadores lógicos são frequentemente usados em instruções condicionais (`if`, `else if`, `while`, etc.) para combinar ou inverter condições.
+
