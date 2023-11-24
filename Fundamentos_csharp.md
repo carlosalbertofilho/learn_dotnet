@@ -628,3 +628,44 @@ Neste exemplo, `meuDouble` é uma variável do tipo `double` que armazena o valo
 No entanto, é importante notar que, assim como o método `Parse`, o método `Convert` também lançará uma exceção se a conversão não for possível. Por exemplo, `Convert.ToInt32("123abc")` resultará em uma exceção porque `"123abc"` não pode ser convertido em um `int`.
 
 ## Operadores Aritméticos
+Os **operadores aritméticos** em C# são usados para realizar operações matemáticas básicas, como adição, subtração, multiplicação, divisão e assim por diante. Eles são como os símbolos que você usa em uma equação matemática.
+
+Aqui estão os operadores aritméticos mais comuns em C#:
+
+- `+` (Adição): Adiciona dois números. Por exemplo:
+```csharp
+int soma = 5 + 3; // soma é igual a 8
+```
+
+- `-` (Subtração): Subtrai um número de outro. Por exemplo:
+```csharp
+int diferenca = 5 - 3; // diferenca é igual a 2
+```
+
+- `*` (Multiplicação): Multiplica dois números. Por exemplo:
+```csharp
+int produto = 5 * 3; // produto é igual a 15
+```
+
+- `/` (Divisão): Divide um número por outro. Por exemplo:
+```csharp
+int quociente = 10 / 2; // quociente é igual a 5
+```
+
+- `%` (Módulo): Retorna o resto de uma divisão. Por exemplo:
+```csharp
+int resto = 10 % 3; // resto é igual a 1
+```
+
+- `++` (Incremento): Aumenta o valor de uma variável em 1. Por exemplo:
+```csharp
+int x = 5;
+x++; // x agora é igual a 6
+```
+
+- `--` (Decremento): Diminui o valor de uma variável em 1. Por exemplo:
+```csharp
+int x = 5;
+x--; // x agora é igual a 4
+```
+
