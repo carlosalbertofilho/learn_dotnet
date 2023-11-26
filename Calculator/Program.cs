@@ -16,6 +16,7 @@ namespace Calculator
             Console.WriteLine("2 - Subtração");
             Console.WriteLine("3 - Multiplicação");
             Console.WriteLine("4 - Divisão");
+            Console.WriteLine("5 - Sair");
 
             Console.WriteLine("Opção: ");
             short option = short.Parse(tryReadsShort());
@@ -26,6 +27,7 @@ namespace Calculator
                 case 2: Sub(); break;
                 case 3: Mult(); break;
                 case 4: Div(); break;
+                case 5: Environment.Exit(0); break;
                 default: ShowError(); break;
             }
         }
