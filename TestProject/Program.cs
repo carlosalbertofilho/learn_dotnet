@@ -1,17 +1,31 @@
 ﻿using System;
 
-Random dice = new Random();
-int roll1 = dice.Next();
-int roll2 = dice.Next(1, 7);
-int roll3 = dice.Next(50, 202);
+namespace TestProject
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            Menu();
+        }
 
-Console.WriteLine($"First Dice roll: {roll1}");
-Console.WriteLine($"Second Dice roll: {roll2}");
-Console.WriteLine($"Third Dice roll: {roll3}");
+        static void Menu()
+        {
+            Console.Clear();
+            Console.WriteLine("O que você deseja fazer?");
+            Console.WriteLine("1 - MyRandom");
+            Console.WriteLine("2 - MyString");
+            Console.WriteLine("0 - Sair");
 
-Console.WriteLine("------------------");
-int firstValue = 500;
-int secondValue = 600;
-int largerValue = Math.Max(firstValue, secondValue);
+            short option = short.Parse(Console.ReadLine());
 
-Console.WriteLine(largerValue);
+            switch (option)
+            {
+                case 0: System.Environment.Exit(0); break;
+                case 1: MyRandom.RollDice();; break;
+                case 2: MyString.MyInterpolation(); break;
+                default: Menu(); break;
+            }
+        }
+    }
+}
