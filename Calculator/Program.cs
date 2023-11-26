@@ -6,6 +6,11 @@ namespace Calculator
     {
         static void Main(string[] args)
         {
+            Menu();
+        }
+
+        static void Menu()
+        {
             Console.WriteLine("Selecione uma opção: ");
             Console.WriteLine("1 - Soma");
             Console.WriteLine("2 - Subtração");
@@ -13,7 +18,7 @@ namespace Calculator
             Console.WriteLine("4 - Divisão");
 
             Console.WriteLine("Opção: ");
-            short option = short.Parse(Console.ReadLine());
+            short option = short.Parse(tryReadsShort());
 
             switch(option)
             {
@@ -30,10 +35,10 @@ namespace Calculator
             Console.Clear();
 
             Console.WriteLine("Primeiro valor: ");
-            float v1 = float.Parse(Console.ReadLine());
+            float v1 = float.Parse(tryReadsFloat());
 
             Console.WriteLine("Segundo valor: ");
-            float v2 = float.Parse(Console.ReadLine());
+            float v2 = float.Parse(tryReadsFloat());
 
             Console.WriteLine("O resultado de "+v1+" + "+v2+" é "+(v1+v2));
         }
@@ -43,10 +48,10 @@ namespace Calculator
             Console.Clear();
 
             Console.WriteLine("Primeiro valor: ");
-            float v1 = float.Parse(Console.ReadLine());
+            float v1 = float.Parse(tryReadsFloat());
 
             Console.WriteLine("Segundo valor: ");
-            float v2 = float.Parse(Console.ReadLine());
+            float v2 = float.Parse(tryReadsFloat());
 
             Console.WriteLine("O resultado de "+v1+" - "+v2+" é "+(v1-v2));
         }
@@ -56,10 +61,10 @@ namespace Calculator
             Console.Clear();
 
             Console.WriteLine("Primeiro valor: ");
-            float v1 = float.Parse(Console.ReadLine());
+            float v1 = float.Parse(tryReadsFloat());
 
             Console.WriteLine("Segundo valor: ");
-            float v2 = float.Parse(Console.ReadLine());
+            float v2 = float.Parse(tryReadsFloat());
 
             Console.WriteLine("O resultado de "+v1+" * "+v2+" é "+(v1*v2));
         }
@@ -69,10 +74,10 @@ namespace Calculator
             Console.Clear();
 
             Console.WriteLine("Primeiro valor: ");
-            float v1 = float.Parse(Console.ReadLine());
+            float v1 = float.Parse(tryReadsFloat());
 
             Console.WriteLine("Segundo valor: ");
-            float v2 = float.Parse(Console.ReadLine());
+            float v2 = float.Parse(tryReadsFloat());
 
             Console.WriteLine("O resultado de "+v1+" / "+v2+" é "+(v1/v2));
         }
@@ -81,6 +86,45 @@ namespace Calculator
         {
             Console.Clear();
             Console.WriteLine("Opção inválida!");
+            Menu();
+        }
+
+        static string tryReadsShort()
+        {
+            string? input = Console.ReadLine();
+            if (input == null)
+            {
+                Console.WriteLine("Nenhuma entrada detectada, tente novamente: ");
+                return tryReadsShort();
+            }
+            else if (!short.TryParse(input, out short result))
+            {
+                Console.WriteLine("Entrada inválida, tente novamente: ");
+                return tryReadsShort();
+            }
+            else
+            {
+                return input;
+            }
+        }
+
+        static string tryReadsFloat()
+        {
+            string? input = Console.ReadLine();
+            if (input == null)
+            {
+                Console.WriteLine("Nenhuma entrada detectada, tente novamente: ");
+                return tryReadsFloat();
+            }
+            else if (!float.TryParse(input, out float result))
+            {
+                Console.WriteLine("Entrada inválida, tente novamente: ");
+                return tryReadsFloat();
+            }
+            else
+            {
+                return input;
+            }
         }
     }
 }
