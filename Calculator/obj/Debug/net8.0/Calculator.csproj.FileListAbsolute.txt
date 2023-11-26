@@ -1,0 +1,15 @@
+/workspaces/learn_dotnet/Calculator/bin/Debug/net8.0/Calculator
+/workspaces/learn_dotnet/Calculator/bin/Debug/net8.0/Calculator.deps.json
+/workspaces/learn_dotnet/Calculator/bin/Debug/net8.0/Calculator.runtimeconfig.json
+/workspaces/learn_dotnet/Calculator/bin/Debug/net8.0/Calculator.dll
+/workspaces/learn_dotnet/Calculator/bin/Debug/net8.0/Calculator.pdb
+/workspaces/learn_dotnet/Calculator/obj/Debug/net8.0/Calculator.GeneratedMSBuildEditorConfig.editorconfig
+/workspaces/learn_dotnet/Calculator/obj/Debug/net8.0/Calculator.AssemblyInfoInputs.cache
+/workspaces/learn_dotnet/Calculator/obj/Debug/net8.0/Calculator.AssemblyInfo.cs
+/workspaces/learn_dotnet/Calculator/obj/Debug/net8.0/Calculator.csproj.CoreCompileInputs.cache
+/workspaces/learn_dotnet/Calculator/obj/Debug/net8.0/Calculator.sourcelink.json
+/workspaces/learn_dotnet/Calculator/obj/Debug/net8.0/Calculator.dll
+/workspaces/learn_dotnet/Calculator/obj/Debug/net8.0/refint/Calculator.dll
+/workspaces/learn_dotnet/Calculator/obj/Debug/net8.0/Calculator.pdb
+/workspaces/learn_dotnet/Calculator/obj/Debug/net8.0/Calculator.genruntimeconfig.cache
+/workspaces/learn_dotnet/Calculator/obj/Debug/net8.0/ref/Calculator.dll
