@@ -133,4 +133,4 @@ class Program
 
 Neste exemplo, criamos um `StringBuilder`, adicionamos algumas strings a ele, modificamos a string no `StringBuilder`, inserimos uma nova string em um índice específico, removemos alguns caracteres e, finalmente, obtivemos a string resultante do `StringBuilder`. E tudo isso foi feito sem criar novos objetos de string!
 
-Espero que isso ajude! Deixe-me saber se você tem mais perguntas. 😊
+
