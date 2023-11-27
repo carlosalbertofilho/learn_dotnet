@@ -17,14 +17,33 @@ namespace TestProject
             Console.WriteLine("2 - MyString");
             Console.WriteLine("0 - Sair");
 
-            short option = short.Parse(Console.ReadLine());
+            short option = short.Parse(tryReadsShort());
 
             switch (option)
             {
                 case 0: System.Environment.Exit(0); break;
                 case 1: MyRandom.RollDice();; break;
-                case 2: MyString.MyInterpolation(); break;
+                case 2: MyString.MyCompare(); break;
                 default: Menu(); break;
+            }
+        }
+
+         static string tryReadsShort()
+        {
+            string? input = Console.ReadLine();
+            if (input == null)
+            {
+                Console.WriteLine("Nenhuma entrada detectada, tente novamente: ");
+                return tryReadsShort();
+            }
+            else if (!short.TryParse(input, out short result))
+            {
+                Console.WriteLine("Entrada inválida, tente novamente: ");
+                return tryReadsShort();
+            }
+            else
+            {
+                return input;
             }
         }
     }
