@@ -65,5 +65,3 @@ Array.ForEach(numeros, numero => {
 ```
 
 Neste exemplo, o método de extensão `Array.ForEach` é usado para percorrer o array. Este método aceita dois argumentos: o array a ser percorrido e uma função a ser executada para cada elemento do array. A função é fornecida como uma expressão lambda.
-
-Espero que isso ajude a entender melhor o conceito de percorrer um array no C#!
