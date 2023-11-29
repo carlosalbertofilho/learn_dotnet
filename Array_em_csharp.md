@@ -5,6 +5,8 @@ Arrays em C# são uma estrutura de dados que armazena uma coleção de elementos
 ```csharp
 // Declare e inicialize um array
 int[] numeros = new int[5] {1, 2, 3, 4, 5};
+//ou
+var numeros2 = new int[5] {6, 7, 8, 9, 10};
 
 // Acesse um elemento do array
 int primeiroNumero = numeros[0];
