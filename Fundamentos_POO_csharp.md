@@ -264,4 +264,134 @@ class Program
 
 Neste exemplo, `Animal` é a classe base e `Porco` é a classe derivada. A classe `Animal` tem um método `animalSound()` que é substituído na classe `Porco`. No método `Main`, criamos um objeto `Animal` e um objeto `Porco` e chamamos o método `animalSound()` em ambos. Isso demonstra o polimorfismo porque o mesmo método `animalSound()` está fazendo coisas diferentes dependendo do tipo de objeto que está chamando.
 
-# 
+# Using e Dispose
+
+Em C#, `using` e `Dispose` são usados para lidar com recursos não gerenciados, como arquivos, conexões de banco de dados, soquetes de rede, etc. Esses recursos não são gerenciados pelo coletor de lixo do .NET e precisam ser liberados explicitamente quando não são mais necessários.
+
+### Using
+
+A declaração `using` é uma maneira conveniente de garantir que um objeto IDisposable seja limpo corretamente. Isso é equivalente a usar um bloco `try/finally`.
+
+Aqui está um exemplo de como usar a declaração `using`:
+
+```csharp
+using (StreamReader sr = new StreamReader("file.txt"))
+{
+    // Operações com o objeto sr.
+}
+```
+
+Neste exemplo, o objeto `StreamReader` `sr` é automaticamente descartado assim que o controle sai do bloco `using`. Isso é equivalente ao seguinte código:
+
+```csharp
+StreamReader sr = null;
+try
+{
+    sr = new StreamReader("file.txt");
+    // Operações com o objeto sr.
+}
+finally
+{
+    if (sr != null)
+        sr.Dispose();
+}
+```
+
+### Dispose
+
+O método `Dispose` é usado para liberar recursos não gerenciados. Ele é geralmente chamado dentro de um bloco `finally` ou de uma declaração `using`.
+
+Aqui está um exemplo de como implementar o método `Dispose` em uma classe:
+
+```csharp
+public class MyClass : IDisposable
+{
+    private bool disposed = false;
+
+    // Método Dispose para limpar os recursos não gerenciados.
+    public void Dispose()
+    {
+        Dispose(true);
+        GC.SuppressFinalize(this);
+    }
+
+    protected virtual void Dispose(bool disposing)
+    {
+        if (!disposed)
+        {
+            if (disposing)
+            {
+                // Libere recursos gerenciados aqui.
+            }
+
+            // Libere recursos não gerenciados aqui.
+
+            disposed = true;
+        }
+    }
+
+    // Destrutor da classe.
+    ~MyClass()
+    {
+        Dispose(false);
+    }
+}
+```
+
+Neste exemplo, a classe `MyClass` implementa a interface `IDisposable` e fornece uma implementação para o método `Dispose`. Quando o método `Dispose` é chamado, ele libera todos os recursos não gerenciados e suprime a finalização do objeto, o que significa que o destrutor da classe não será chamado pelo coletor de lixo.
+
+# Classes Estáticas
+
+Em C#, uma classe estática é uma classe que não pode ser instanciada ou herdada e seus membros podem ser acessados diretamente. Isso significa que você não precisa criar um objeto da classe para acessar seus membros. Uma classe estática permanece na memória pelo tempo de vida do aplicativo que a contém e não pode ser coletada como lixo.
+
+### Uso de Classes Estáticas
+
+As classes estáticas são úteis quando você tem dados ou comportamentos que não estão associados a instâncias específicas de uma classe. Por exemplo, se você tiver uma biblioteca de funções matemáticas, poderá implementá-las como métodos estáticos dentro de uma classe estática.
+
+Aqui está um exemplo de como definir e usar uma classe estática:
+
+```csharp
+public static class MinhaClasseEstatica
+{
+    public static int MeuMetodoEstatico(int x, int y)
+    {
+        return x + y;
+    }
+}
+
+// Uso da classe estática
+int resultado = MinhaClasseEstatica.MeuMetodoEstatico(5, 10);
+```
+
+Neste exemplo, `MinhaClasseEstatica` é uma classe estática que contém um método estático `MeuMetodoEstatico`. Este método pode ser chamado diretamente usando o nome da classe, sem a necessidade de criar uma instância da classe.
+
+# Classes Seladas
+
+Em C#, uma classe selada é uma classe que não pode ser herdada. Em outras palavras, nenhuma outra classe pode estender uma classe selada. Isso é útil quando você quer restringir a herança para evitar que outras classes alterem a funcionalidade de sua classe.
+
+### Uso de Classes Seladas
+
+Para criar uma classe selada, você usa a palavra-chave `sealed`:
+
+```csharp
+public sealed class MinhaClasseSelada
+{
+    public int MeuMetodo(int x, int y)
+    {
+        return x + y;
+    }
+}
+```
+
+Neste exemplo, `MinhaClasseSelada` é uma classe selada que contém um método `MeuMetodo`. Nenhuma outra classe pode estender `MinhaClasseSelada`.
+
+Tentar herdar de uma classe selada resultará em um erro de compilação:
+
+```csharp
+public class MinhaOutraClasse : MinhaClasseSelada // Erro de compilação
+{
+}
+```
+
+# Partial Class
+
