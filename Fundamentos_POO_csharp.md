@@ -459,3 +459,42 @@ Neste exemplo, `MinhaClasse` é uma classe que implementa `IMinhaInterface` e fo
 As interfaces são úteis quando queremos garantir que uma classe ou struct forneça um conjunto específico de funcionalidades, ou quando queremos permitir que um objeto seja manipulado como um tipo específico de objeto, independentemente de sua classe ou struct real.
 
 
+# Classes Abstradas
+
+Em C#, uma classe abstrata é uma classe que não pode ser instanciada e é destinada a ser herdada por outras classes. Ela pode conter métodos abstratos (sem corpo) que devem ser implementados pelas classes derivadas, bem como métodos não abstratos (com corpo).
+
+### Uso de Classes Abstratas
+
+Para criar uma classe abstrata, usamos a palavra-chave `abstract`:
+
+```csharp
+public abstract class MinhaClasseAbstrata
+{
+    public abstract void MeuMetodoAbstrato();
+
+    public void MeuMetodoNaoAbstrato()
+    {
+        // Implementação do MeuMetodoNaoAbstrato.
+    }
+}
+```
+
+Neste exemplo, `MinhaClasseAbstrata` é uma classe abstrata que declara um método abstrato chamado `MeuMetodoAbstrato` e um método não abstrato chamado `MeuMetodoNaoAbstrato`.
+
+Para herdar de uma classe abstrata, usamos a palavra-chave `:` seguida pelo nome da classe abstrata. Também precisamos fornecer implementações para todos os métodos abstratos:
+
+```csharp
+public class MinhaClasse : MinhaClasseAbstrata
+{
+    public override void MeuMetodoAbstrato()
+    {
+        // Implementação do MeuMetodoAbstrato.
+    }
+}
+```
+
+Neste exemplo, `MinhaClasse` é uma classe que herda de `MinhaClasseAbstrata` e fornece uma implementação para `MeuMetodoAbstrato`.
+
+As classes abstratas são úteis quando temos um conjunto de classes que compartilham funcionalidades comuns, mas também têm comportamentos específicos que precisam ser implementados de maneira diferente por cada classe.
+
+# Upcast e Downcast
