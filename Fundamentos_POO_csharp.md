@@ -395,3 +395,67 @@ public class MinhaOutraClasse : MinhaClasseSelada // Erro de compilação
 
 # Partial Class
 
+Em C#, uma classe parcial é uma classe cuja definição pode ser dividida em várias partes ou arquivos. Cada parte contém uma seção da definição da classe, e todas as partes são combinadas quando o aplicativo é compilado.
+
+### Uso de Classes Parciais
+
+A palavra-chave `partial` é usada para definir uma classe parcial:
+
+```csharp
+// Arquivo MinhaClasseParcial1.cs
+public partial class MinhaClasseParcial
+{
+    public void Metodo1()
+    {
+        // Implementação do Metodo1.
+    }
+}
+
+// Arquivo MinhaClasseParcial2.cs
+public partial class MinhaClasseParcial
+{
+    public void Metodo2()
+    {
+        // Implementação do Metodo2.
+    }
+}
+```
+
+Neste exemplo, `MinhaClasseParcial` é uma classe parcial que é definida em dois arquivos, `MinhaClasseParcial1.cs` e `MinhaClasseParcial2.cs`. Cada arquivo contém uma parte da definição da classe. Quando o aplicativo é compilado, as duas partes são combinadas em uma única classe.
+
+As classes parciais são úteis quando trabalhamos com código gerado automaticamente (como o código gerado por designers de formulários), pois permitem que você estenda a classe em um arquivo separado sem modificar o arquivo gerado automaticamente.
+
+# Interfaces em C#
+
+Em C#, uma interface é um tipo de referência que define um contrato para classes, structs e outras interfaces. Ela especifica um conjunto de membros que devem ser implementados. Uma interface pode conter declarações de métodos, propriedades, eventos e indexadores, mas não pode conter a implementação desses membros.
+
+### Uso de Interfaces
+
+Para definir uma interface, usamos a palavra-chave `interface`:
+
+```csharp
+public interface IMinhaInterface
+{
+    void MeuMetodo();
+}
+```
+
+Neste exemplo, `IMinhaInterface` é uma interface que declara um método chamado `MeuMetodo`.
+
+Para implementar uma interface, usamos a palavra-chave `:` seguida pelo nome da interface:
+
+```csharp
+public class MinhaClasse : IMinhaInterface
+{
+    public void MeuMetodo()
+    {
+        // Implementação do MeuMetodo.
+    }
+}
+```
+
+Neste exemplo, `MinhaClasse` é uma classe que implementa `IMinhaInterface` e fornece uma implementação para `MeuMetodo`.
+
+As interfaces são úteis quando queremos garantir que uma classe ou struct forneça um conjunto específico de funcionalidades, ou quando queremos permitir que um objeto seja manipulado como um tipo específico de objeto, independentemente de sua classe ou struct real.
+
+
