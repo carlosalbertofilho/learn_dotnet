@@ -16,6 +16,7 @@ namespace TestProject
             Console.WriteLine("1 - MyRandom");
             Console.WriteLine("2 - MyString");
             Console.WriteLine("3 - MyData");
+            Console.WriteLine("4 - MyConditions");
             Console.WriteLine("0 - Sair");
 
             short option = short.Parse(tryReadsShort());
@@ -26,6 +27,7 @@ namespace TestProject
                 case 1: MyRandom.RollDice();; break;
                 case 2: MyString.MyCompare(); break;
                 case 3: MyData.Show(); break;
+                case 4: MyConditions.Run(); break;
                 default: Menu(); break;
             }
         }
