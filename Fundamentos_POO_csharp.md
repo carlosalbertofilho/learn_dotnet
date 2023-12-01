@@ -498,3 +498,143 @@ Neste exemplo, `MinhaClasse` é uma classe que herda de `MinhaClasseAbstrata` e 
 As classes abstratas são úteis quando temos um conjunto de classes que compartilham funcionalidades comuns, mas também têm comportamentos específicos que precisam ser implementados de maneira diferente por cada classe.
 
 # Upcast e Downcast
+
+**Upcasting** e **Downcasting** são conceitos importantes na programação orientada a objetos e estão relacionados à herança e ao polimorfismo.
+
+- **Upcasting**: É o processo de converter uma referência de tipo de subclasse em uma referência de tipo de superclasse. Isso é feito automaticamente em C#, pois uma subclasse é um tipo especializado da superclasse, então não há risco de perda de dados. O upcasting é útil quando você quer usar um método ou propriedade que está disponível na superclasse, mas não na subclasse.
+
+- **Downcasting**: É o processo de converter uma referência de tipo de superclasse em uma referência de tipo de subclasse. Isso deve ser feito explicitamente em C#, pois há um risco de perda de dados. O downcasting é útil quando você sabe que o objeto é de um tipo de subclasse e você quer usar um método ou propriedade que está disponível apenas na subclasse.
+
+## Exemplo
+
+Aqui está um exemplo simples de upcasting e downcasting em C#:
+
+```csharp
+// Classe base
+public class Animal
+{
+    public void Eat()
+    {
+        Console.WriteLine("Comendo...");
+    }
+}
+
+// Classe derivada
+public class Dog : Animal
+{
+    public void Bark()
+    {
+        Console.WriteLine("Latindo...");
+    }
+}
+
+class Program
+{
+    static void Main(string[] args)
+    {
+        Dog rex = new Dog();
+
+        // Upcasting
+        Animal animal = rex;
+        animal.Eat();  // Saída: "Comendo..."
+
+        // Downcasting
+        Dog dog = (Dog)animal;
+        dog.Bark();  // Saída: "Latindo..."
+    }
+}
+```
+
+Neste exemplo, `Dog` é uma subclasse de `Animal`. No método `Main`, criamos um objeto `Dog` chamado `rex`. Em seguida, fazemos o upcasting de `rex` para um `Animal` e chamamos o método `Eat()`. Depois, fazemos o downcasting do `Animal` de volta para um `Dog` e chamamos o método `Bark()`. Isso demonstra como o upcasting e o downcasting podem ser usados para acessar diferentes métodos dependendo do tipo de referência.
+
+# Comparação de Objetos em C#
+
+A comparação de objetos é um conceito fundamental na programação orientada a objetos. Em C#, existem duas maneiras principais de comparar objetos: comparação de referência e comparação de valor.
+
+- **Comparação de Referência**: Quando dois objetos são comparados usando o operador `==`, o C# verifica se as duas variáveis apontam para o mesmo objeto na memória, não se seus conteúdos são iguais. Isso é chamado de comparação de referência.
+
+- **Comparação de Valor**: Se você quiser comparar se dois objetos têm o mesmo valor, você precisa implementar isso em sua classe. Isso é geralmente feito sobrescrevendo os métodos `Equals` e `GetHashCode` da classe base `Object`.
+
+## Uso
+
+Para implementar a comparação de valor em sua classe, você precisa sobrescrever os métodos `Equals` e `GetHashCode`. O método `Equals` é usado para comparar dois objetos para igualdade, e o método `GetHashCode` é usado para retornar um código hash único para o objeto.
+
+## Exemplo
+
+Aqui está um exemplo simples de como a comparação de objetos é feita em C#:
+
+```csharp
+public class Pessoa
+{
+    public string Nome { get; set; }
+
+    public override bool Equals(object obj)
+    {
+        if (obj == null || GetType() != obj.GetType())
+        {
+            return false;
+        }
+
+        Pessoa outraPessoa = (Pessoa)obj;
+        return Nome == outraPessoa.Nome;  // Compara os nomes para igualdade
+    }
+
+    public override int GetHashCode()
+    {
+        return Nome.GetHashCode();  // Retorna o código hash do nome
+    }
+}
+
+class Program
+{
+    static void Main(string[] args)
+    {
+        Pessoa pessoa1 = new Pessoa { Nome = "João" };
+        Pessoa pessoa2 = new Pessoa { Nome = "João" };
+
+        Console.WriteLine(pessoa1 == pessoa2);  // Saída: "False" (comparação de referência)
+        Console.WriteLine(pessoa1.Equals(pessoa2));  // Saída: "True" (comparação de valor)
+    }
+}
+```
+
+Neste exemplo, `Pessoa` é uma classe com um campo `Nome` e métodos `Equals` e `GetHashCode` sobrescritos. No método `Main`, criamos dois objetos `Pessoa` com o mesmo nome. Quando usamos o operador `==` para compará-los, ele retorna `False` porque está fazendo uma comparação de referência. Quando usamos o método `Equals` para compará-los, ele retorna `True` porque está fazendo uma comparação de valor.
+
+# Delegates em C#
+
+Um **Delegate** em C# é semelhante a um ponteiro para uma função, em C ou C++. Um delegate é um tipo de referência que pode ser usado para encapsular um método nomeado ou anônimo. Delegates são especialmente usados para implementar eventos e o conceito de callbacks.
+
+## Uso
+
+Delegates são usados onde você espera algum tipo de comportamento, mas não sabe qual método deve ser chamado. Você precisa apenas saber o retorno e os tipos de parâmetros para usar um delegate.
+
+Para declarar um delegate, você usa a palavra-chave `delegate` seguida pela assinatura do método.
+
+## Exemplo
+
+Aqui está um exemplo simples de como os delegates são usados em C#:
+
+```csharp
+// Declaração do delegate
+public delegate void MeuDelegate(string msg);
+
+// Método que corresponde à assinatura do delegate
+public static void MeuMetodo(string mensagem)
+{
+    Console.WriteLine(mensagem);
+}
+
+class Program
+{
+    static void Main(string[] args)
+    {
+        // Criação de uma instância do delegate
+        MeuDelegate del = new MeuDelegate(MeuMetodo);
+
+        // Invocação do delegate
+        del("Olá, Mundo!");
+    }
+}
+```
+
+Neste exemplo, `MeuDelegate` é um delegate que encapsula um método que recebe um único parâmetro do tipo `string` e não retorna nada. `MeuMetodo` é um método que corresponde à assinatura do delegate. No método `Main`, criamos uma instância do delegate `del` e associamos a ela o método `MeuMetodo`. Em seguida, invocamos o delegate, que chama `MeuMetodo` e imprime "Olá, Mundo!".
