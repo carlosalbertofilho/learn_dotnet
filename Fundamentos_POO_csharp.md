@@ -638,3 +638,67 @@ class Program
 ```
 
 Neste exemplo, `MeuDelegate` é um delegate que encapsula um método que recebe um único parâmetro do tipo `string` e não retorna nada. `MeuMetodo` é um método que corresponde à assinatura do delegate. No método `Main`, criamos uma instância do delegate `del` e associamos a ela o método `MeuMetodo`. Em seguida, invocamos o delegate, que chama `MeuMetodo` e imprime "Olá, Mundo!".
+
+# Events
+
+**Events** em C# são uma maneira de fornecer notificações a outros classes quando um determinado evento acontece. Um evento é uma ação especial que pode ser gerada por um objeto (conhecido como o publicador do evento) com base em alterações em seu estado e é notificado a outros objetos (conhecidos como assinantes).
+
+Os eventos usam o conceito de delegados para fornecer uma assinatura de evento que será usada para chamar o método de evento.
+
+## Uso
+
+Para declarar um evento dentro de uma classe, você usa a palavra-chave `event` seguida pelo tipo de delegate para o evento e o nome do evento.
+
+Os assinantes de um evento podem se inscrever no evento usando o operador `+=` e podem cancelar a inscrição usando o operador `-=`.
+
+## Exemplo
+
+Aqui está um exemplo simples de como os eventos são usados em C#:
+
+```csharp
+// Delegate para o evento
+public delegate void MudancaEventHandler();
+
+// Classe que publica o evento
+public class Publicador
+{
+    // Evento
+    public event MudancaEventHandler Mudanca;
+
+    // Método que dispara o evento
+    public void DispararEvento()
+    {
+        Mudanca?.Invoke();
+    }
+}
+
+// Classe que se inscreve no evento
+public class Assinante
+{
+    public void Inscrever(Publicador pub)
+    {
+        pub.Mudanca += ResponderAoEvento;
+    }
+
+    // Método que será chamado quando o evento for disparado
+    private void ResponderAoEvento()
+    {
+        Console.WriteLine("O evento foi disparado!");
+    }
+}
+
+class Program
+{
+    static void Main(string[] args)
+    {
+        Publicador pub = new Publicador();
+        Assinante ass = new Assinante();
+
+        ass.Inscrever(pub);
+
+        pub.DispararEvento();  // Saída: "O evento foi disparado!"
+    }
+}
+```
+
+Neste exemplo, `Publicador` é uma classe que define um evento chamado `Mudanca`. `Assinante` é uma classe que se inscreve no evento `Mudanca` e define um método `ResponderAoEvento` que será chamado quando o evento for disparado. No método `Main`, criamos um objeto `Publicador` e um objeto `Assinante`, inscrevemos o `Assinante` no evento `Mudanca` do `Publicador` e então disparamos o evento.
