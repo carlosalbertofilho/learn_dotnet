@@ -11,9 +11,9 @@ namespace Balta
                 new Article("Artigo sobre OOP", "orientacao-objetos")
             };
 
-            Console.WriteLine(articles[0].Id);
-            Console.WriteLine(articles[0].Title);
-            Console.WriteLine(articles[0].Url);
+            // Console.WriteLine(articles[0].Id);
+            // Console.WriteLine(articles[0].Title);
+            // Console.WriteLine(articles[0].Url);
 
             var course =
                 new Course("Fundamentos OOP", "fundamentos-oop");
@@ -43,10 +43,10 @@ namespace Balta
 
 
             Console.WriteLine(careers.Title);
-            foreach (var career in careers.Items.OrderBy(x => x.Order))
+            foreach (
+                var career in careers.Items.OrderBy(x => x.Order))
             {
                 Console.WriteLine($"{career.Order} - {career.Title}");
-                Console.WriteLine(career.Course?.Title);
             }
         }
     }
