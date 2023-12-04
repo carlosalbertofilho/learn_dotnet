@@ -907,3 +907,41 @@ Console.WriteLine(primeiroImpar);  // Saída: "1"
 ```
 
 Neste exemplo, criamos uma lista de inteiros chamada `numeros`. Usamos o método `Where` para filtrar os números pares, o método `First` para encontrar o primeiro número par e o método `Find` para encontrar o primeiro número ímpar. Isso demonstra como `Where`, `First` e `Find` podem ser usados para consultar e filtrar dados em uma lista em C#.
+
+# ICollection
+
+**ICollection** é uma interface em C# que define métodos e propriedades gerais para coleções. Ela pertence ao namespace `System.Collections.Generic` do .NET Framework e é a base para todas as classes de coleção genéricas no .NET.
+
+A interface `ICollection<T>` estende a interface `IEnumerable<T>` e adiciona propriedades e métodos que permitem adicionar e remover itens, limpar a coleção, verificar se um item está na coleção, copiar a coleção para um array e obter o número de itens na coleção.
+
+## Uso
+
+Para usar a interface `ICollection<T>`, você precisa implementá-la em sua classe ou usar uma das classes de coleção fornecidas pelo .NET Framework que já implementam `ICollection<T>`, como `List<T>`, `HashSet<T>` e `Dictionary<TKey, TValue>`.
+
+## Exemplo
+
+Aqui está um exemplo simples de como a interface `ICollection` é usada em C#:
+
+```csharp
+// Criação de uma coleção de inteiros
+ICollection<int> numeros = new List<int>();
+
+// Adicionando itens à coleção
+numeros.Add(1);
+numeros.Add(2);
+numeros.Add(3);
+
+// Verificando se um item está na coleção
+bool contemDois = numeros.Contains(2);  // Retorna true
+
+// Removendo um item da coleção
+numeros.Remove(2);
+
+// Obtendo o número de itens na coleção
+int count = numeros.Count;  // Retorna 2
+
+// Limpar a coleção
+numeros.Clear();
+```
+
+Neste exemplo, criamos uma coleção de inteiros chamada `numeros`. Adicionamos alguns números à coleção, verificamos se um número está na coleção, removemos um número, obtemos a contagem de números na coleção e limpamos a coleção. Isso demonstra como a interface `ICollection` pode ser usada para trabalhar com uma coleção de itens em C#.
