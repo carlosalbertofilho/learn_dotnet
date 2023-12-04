@@ -749,3 +749,161 @@ class Program
 ```
 
 Neste exemplo, `MinhaClasse` é uma classe genérica que tem um campo do tipo `T`. A restrição `where T : new()` significa que `T` deve ter um construtor sem parâmetros. No método `Main`, criamos dois objetos `MinhaClasse`: um que usa `int` para `T` e outro que usa `string` para `T`. Isso demonstra como os generics e a palavra-chave `where` podem ser usados para criar código que funciona com vários tipos de dados e ainda mantém a segurança de tipos.
+
+# Listas 
+
+Uma **Lista** em C# é uma coleção fortemente tipada de objetos que pode ser acessada por índice. Ela pertence à biblioteca `System.Collections.Generic` do .NET Framework. Uma lista fornece funcionalidades para adicionar, remover ou encontrar itens em uma coleção.
+
+## Uso
+
+Para usar uma lista em C#, você precisa instanciá-la com o tipo de dados que ela armazenará. Você pode adicionar itens à lista usando o método `Add()`, remover itens usando o método `Remove()`, e acessar itens usando o operador de indexação `[]`.
+
+## Exemplo
+
+Aqui está um exemplo simples de como as listas são usadas em C#:
+
+```csharp
+// Criação de uma lista de inteiros
+List<int> numeros = new List<int>();
+
+// Adicionando itens à lista
+numeros.Add(1);
+numeros.Add(2);
+numeros.Add(3);
+
+// Acessando itens da lista
+Console.WriteLine(numeros[0]);  // Saída: "1"
+
+// Removendo um item da lista
+numeros.Remove(2);
+
+// Iterando sobre a lista
+foreach (int numero in numeros)
+{
+    Console.WriteLine(numero);  // Saída: "1" e "3"
+}
+```
+
+Neste exemplo, criamos uma lista de inteiros chamada `numeros`. Adicionamos alguns números à lista, acessamos um número pelo índice, removemos um número e iteramos sobre a lista para imprimir todos os números. Isso demonstra como as listas podem ser usadas para armazenar e manipular uma coleção de itens em C#.
+
+## IEnumerable
+
+**IEnumerable** é uma interface em C# que define um método, `GetEnumerator`, que retorna um objeto `IEnumerator`. Esta interface permite que um objeto seja iterado (ou "enumerado") usando uma construção `foreach`.
+
+A interface `IEnumerator` fornece os métodos para iterar através de uma coleção, especificamente `MoveNext`, `Reset` e a propriedade `Current`.
+
+### Uso
+
+Qualquer classe ou estrutura que implementa a interface `IEnumerable` pode ser usada com uma construção `foreach`. As classes de coleção no .NET Framework, como `List` e `Array`, implementam `IEnumerable`.
+
+### Exemplo
+
+Aqui está um exemplo simples de como a interface `IEnumerable` é usada em C#:
+
+```csharp
+// Classe que implementa IEnumerable
+public class ColecaoNumeros : IEnumerable
+{
+    int[] numeros = { 1, 2, 3, 4, 5 };
+
+    public IEnumerator GetEnumerator()
+    {
+        foreach (int numero in numeros)
+        {
+            yield return numero;
+        }
+    }
+}
+
+class Program
+{
+    static void Main(string[] args)
+    {
+        ColecaoNumeros colecao = new ColecaoNumeros();
+
+        // Iterando sobre a coleção com foreach
+        foreach (int numero in colecao)
+        {
+            Console.WriteLine(numero);  // Saída: "1", "2", "3", "4", "5"
+        }
+    }
+}
+```
+
+Neste exemplo, `ColecaoNumeros` é uma classe que implementa `IEnumerable`. Ela contém um array de inteiros e implementa o método `GetEnumerator` para retornar cada número no array. No método `Main`, criamos um objeto `ColecaoNumeros` e usamos um loop `foreach` para iterar sobre cada número na coleção. Isso demonstra como a interface `IEnumerable` pode ser usada para permitir a iteração sobre uma coleção personalizada em C#.
+
+# IList 
+
+**IList** é uma interface em C# que representa uma coleção de objetos que podem ser acessados individualmente por índice. Ela herda da interface `ICollection` e adiciona métodos para adicionar, remover e inserir elementos, além de propriedades para acessar elementos por índice.
+
+## Uso
+
+A interface `IList` é implementada por classes de coleção no .NET Framework, como `ArrayList` e `List<T>`. Ela fornece uma maneira flexível de trabalhar com coleções que precisam permitir a adição, remoção e inserção de elementos.
+
+## Exemplo
+
+Aqui está um exemplo simples de como a interface `IList` é usada em C#:
+
+```csharp
+// Criação de uma lista de inteiros
+IList<int> numeros = new List<int>();
+
+// Adicionando itens à lista
+numeros.Add(1);
+numeros.Add(2);
+numeros.Add(3);
+
+// Acessando itens da lista
+Console.WriteLine(numeros[0]);  // Saída: "1"
+
+// Removendo um item da lista
+numeros.Remove(2);
+
+// Inserindo um item na lista
+numeros.Insert(1, 4);
+
+// Iterando sobre a lista
+foreach (int numero in numeros)
+{
+    Console.WriteLine(numero);  // Saída: "1", "4", "3"
+}
+```
+
+Neste exemplo, criamos uma lista de inteiros chamada `numeros`. Adicionamos alguns números à lista, acessamos um número pelo índice, removemos um número, inserimos um novo número e iteramos sobre a lista para imprimir todos os números. Isso demonstra como a interface `IList` pode ser usada para trabalhar com uma coleção de itens em C#.
+
+## Uso de Where, First e Find em Listas em C#
+
+`Where`, `First` e `Find` são métodos úteis em C# para trabalhar com coleções, especificamente com o tipo `List<T>`. Eles são usados para consultar e filtrar dados em uma coleção.
+
+- **Where**: Este método é usado para filtrar uma coleção com base em uma condição específica. Ele retorna uma nova coleção que inclui apenas os elementos que satisfazem a condição.
+
+- **First**: Este método é usado para recuperar o primeiro elemento de uma coleção que satisfaz uma condição específica.
+
+- **Find**: Este método é usado para buscar o primeiro elemento de uma `List<T>` que corresponde à condição especificada.
+
+### Uso
+
+Esses métodos são geralmente usados com expressões lambda para definir a condição de filtragem ou correspondência.
+
+### Exemplo
+
+Aqui está um exemplo simples de como `Where`, `First` e `Find` são usados em C#:
+
+```csharp
+// Criação de uma lista de inteiros
+List<int> numeros = new List<int> { 1, 2, 3, 4, 5 };
+
+// Uso do método Where
+var numerosPares = numeros.Where(n => n % 2 == 0);
+Console.WriteLine(string.Join(", ", numerosPares));  // Saída: "2, 4"
+
+// Uso do método First
+var primeiroPar = numeros.First(n => n % 2 == 0);
+Console.WriteLine(primeiroPar);  // Saída: "2"
+
+// Uso do método Find
+var primeiroImpar = numeros.Find(n => n % 2 != 0);
+Console.WriteLine(primeiroImpar);  // Saída: "1"
+```
+
+Neste exemplo, criamos uma lista de inteiros chamada `numeros`. Usamos o método `Where` para filtrar os números pares, o método `First` para encontrar o primeiro número par e o método `Find` para encontrar o primeiro número ímpar. Isso demonstra como `Where`, `First` e `Find` podem ser usados para consultar e filtrar dados em uma lista em C#.
