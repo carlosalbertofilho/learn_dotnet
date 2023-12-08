@@ -13,14 +13,14 @@ namespace Balta.ContentContext
         public IList<Module> Modules { get; set; } = new List<Module>();
     }
 
-    public class Module
+    public class Module : Base
     {
         public int Order { get; set; }
         public string Title { get; set; } = string.Empty;
         public IList<Lecture> Lectures { get; set; } = new List<Lecture>();
     }
 
-    public class Lecture
+    public class Lecture : Base
     {
         public int Order { get; set; }
         public string Title { get; set; } = string.Empty;

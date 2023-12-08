@@ -1,4 +1,6 @@
 
+using Balta.NotificationContext;
+
 namespace Balta.ContentContext
 {
     public class Career : Content
@@ -11,14 +13,21 @@ namespace Balta.ContentContext
         public int TotalCourses => Items.Count;
     }
 
-    public class CareerItem
+    public class CareerItem : Base
     {
         public CareerItem(
-            int order, 
-            string title, 
-            string description, 
+            int order,
+            string title,
+            string description,
             Course course)
         {
+            if (course is null) 
+                AddNotification(new Notification("Course", "Curso inválido"));
+            if (string.IsNullOrEmpty(title))
+                AddNotification(new Notification("Title", "Título inválido"));
+            if (string.IsNullOrEmpty(description))
+                AddNotification(new Notification("Description", "Descrição inválida"));
+
             Order = order;
             Title = title;
             Description = description;
