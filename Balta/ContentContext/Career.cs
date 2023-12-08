@@ -1,5 +1,6 @@
 
 using Balta.NotificationContext;
+using Balta.SharedContext;
 
 namespace Balta.ContentContext
 {
@@ -31,7 +32,7 @@ namespace Balta.ContentContext
             Order = order;
             Title = title;
             Description = description;
-            Course = course;
+            Course = course ?? new Course(string.Empty, string.Empty);
         }
 
         public int Order { get; set; }
