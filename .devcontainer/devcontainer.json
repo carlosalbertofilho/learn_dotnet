@@ -11,7 +11,8 @@
 				"ms-dotnettools.vscodeintellicode-csharp",
 				"GitHub.copilot",
 				"EditorConfig.EditorConfig",
-				"bierner.markdown-mermaid"
+				"bierner.markdown-mermaid",
+				"csharpier.csharpier-vscode"
 			]
 		}
 	},

@@ -13,6 +13,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Stopwatch", "Stopwatch\Stop
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TextEditor", "TextEditor\TextEditor.csproj", "{B6509F5B-7759-4AF2-9501-F46BF87DC97D}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TestProject", "TestProject\TestProject.csproj", "{DAA52BE8-BEAE-4402-BDD9-4D0426CE87B7}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -39,6 +41,10 @@ Global
 		{B6509F5B-7759-4AF2-9501-F46BF87DC97D}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{B6509F5B-7759-4AF2-9501-F46BF87DC97D}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{B6509F5B-7759-4AF2-9501-F46BF87DC97D}.Release|Any CPU.Build.0 = Release|Any CPU
+		{DAA52BE8-BEAE-4402-BDD9-4D0426CE87B7}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{DAA52BE8-BEAE-4402-BDD9-4D0426CE87B7}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{DAA52BE8-BEAE-4402-BDD9-4D0426CE87B7}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{DAA52BE8-BEAE-4402-BDD9-4D0426CE87B7}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

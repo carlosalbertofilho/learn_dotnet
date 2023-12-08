@@ -9,8 +9,6 @@ namespace TestProject
             Random random = new Random();
 
             var daysUntilExpiration = random.Next(12);
-            var discountPercentage = 0;
-
             Console.Clear();
             Console.WriteLine($"Days until expiration: {daysUntilExpiration}");
 
