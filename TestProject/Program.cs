@@ -21,6 +21,7 @@ namespace TestProject
             Console.WriteLine("6 - MyMatrix");
             Console.WriteLine("7 - MyProjetoGuiado2");
             Console.WriteLine("8 - MyDecision");
+            Console.WriteLine("9 - MySwitch");
             Console.WriteLine("0 - Sair");
 
             short option = short.Parse(tryReadsShort());
@@ -36,6 +37,7 @@ namespace TestProject
                 case 6: MyMatrix.Run(); break;
                 case 7: MyProjetoGuiado2.Run(); break;
                 case 8: MyDecision.Run(); break;
+                case 9: MySwitch.Run(); break;
                 default: Menu(); break;
             }
         }
