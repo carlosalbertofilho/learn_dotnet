@@ -15,6 +15,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TextEditor", "TextEditor\Te
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TestProject", "TestProject\TestProject.csproj", "{DAA52BE8-BEAE-4402-BDD9-4D0426CE87B7}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ContosoPets", "ContosoPets\ContosoPets.csproj", "{DBB3D6D4-212C-4A57-9A23-E782369F4345}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -45,6 +47,10 @@ Global
 		{DAA52BE8-BEAE-4402-BDD9-4D0426CE87B7}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{DAA52BE8-BEAE-4402-BDD9-4D0426CE87B7}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{DAA52BE8-BEAE-4402-BDD9-4D0426CE87B7}.Release|Any CPU.Build.0 = Release|Any CPU
+		{DBB3D6D4-212C-4A57-9A23-E782369F4345}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{DBB3D6D4-212C-4A57-9A23-E782369F4345}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{DBB3D6D4-212C-4A57-9A23-E782369F4345}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{DBB3D6D4-212C-4A57-9A23-E782369F4345}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
