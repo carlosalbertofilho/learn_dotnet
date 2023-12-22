@@ -21,7 +21,7 @@ namespace TestProject
 
         private void heroAttack()
         {
-            if (monsterHealth < 0)
+            if (monsterHealth <= 0 || heroHealth <= 0)
                 return;
 
             var attack = new Random().Next(1, 10);
@@ -33,7 +33,7 @@ namespace TestProject
 
         private void monsterAttack()
         {
-            if (heroHealth < 0)
+            if (heroHealth <= 0 || monsterHealth <= 0 )
                 return;
 
             var attack = new Random().Next(1, 10);
