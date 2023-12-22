@@ -1,3 +1,5 @@
+using System.Globalization;
+
 namespace TestProject
 {
     class MyDecision
@@ -16,6 +18,9 @@ namespace TestProject
             string permission = "Admin|Manager";
             int level = 55;
             Console.WriteLine(AccessLevel(permission, level));
+
+            Console.WriteLine("--------------------");
+            MyLoop(100);
 
             Console.WriteLine("--------------------");
             FixTheCode();
@@ -66,6 +71,36 @@ namespace TestProject
                 Console.WriteLine("Set contains 42");
 
             Console.WriteLine($"Total: {total}");
+        }
+
+        public static void MyForLoop()
+        {
+            foreach (var number in Enumerable.Range(1, 100))
+            {
+                if (number % 3 == 0 && number % 5 == 0)
+                    Console.WriteLine($"{number} - FizzBuzz");
+                else if (number % 3 == 0)
+                    Console.WriteLine($"{number} - Fizz");
+                else if (number % 5 == 0)
+                    Console.WriteLine($"{number} - Buzz");
+                else
+                    Console.WriteLine(number);
+            }
+        }
+
+        public static void MyLoop(int number)
+        {
+            if (number % 3 == 0 && number % 5 == 0)
+                Console.WriteLine($"{number} - FizzBuzz");
+            else if (number % 3 == 0)
+                Console.WriteLine($"{number} - Fizz");
+            else if (number % 5 == 0)
+                Console.WriteLine($"{number} - Buzz");
+            else
+                Console.WriteLine(number);
+
+            if (number > 0)
+                MyLoop(number - 1);
         }
     }
 }
