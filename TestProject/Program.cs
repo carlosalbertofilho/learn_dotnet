@@ -23,6 +23,7 @@ namespace TestProject
             Console.WriteLine("8 - MyDecision");
             Console.WriteLine("9 - MySwitch");
             Console.WriteLine("10 - MyHeroGame");
+            Console.WriteLine("11 - MyWhile");
             Console.WriteLine("0 - Sair");
 
             short option = short.Parse(tryReadsShort());
@@ -40,6 +41,7 @@ namespace TestProject
                 case 8: MyDecision.Run(); break;
                 case 9: MySwitch.Run(); break;
                 case 10: HeroGame.Run(); break;
+                case 11: MyWhile.Run(); break;
                 default: Menu(); break;
             }
         }
