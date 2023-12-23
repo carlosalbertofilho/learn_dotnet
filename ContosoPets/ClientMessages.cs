@@ -2,7 +2,7 @@ namespace ContosoPets
 {
     public class ClientMessages
     {
-        public static string Menu()
+        public static void Menu(Animal[] ourAnimal)
         {
             string? readResult;
             string menuSelection = "";
@@ -29,7 +29,38 @@ namespace ContosoPets
                 menuSelection = readResult.ToLower();
             }
 
-            return menuSelection;
+            switch (menuSelection)
+            {
+                case "1":
+                    foreach (var animal in ourAnimal)
+                        Console.WriteLine(animal);
+                    break;
+                case "2":
+                    ourAnimal = ourAnimal.Append(Animal.AddAnimal()).ToArray();
+                    break;
+                case "3":
+                    AgeAndPhysicalDescriptionSet(ourAnimal);
+                    break;
+                case "4":
+                    NicknameAndPersonalityDescriptionSet(ourAnimal);
+                    break;
+                case "5":
+                    EditAge(ourAnimal);
+                    break;
+                case "6":
+                    NicknameAndPersonalityDescriptionSet(ourAnimal);
+                    break;
+                case "7":
+                    DisplayCatsWithCharacteristic(ourAnimal);
+                    break;
+                case "8":
+                    DisplayDogsWithCharacteristic(ourAnimal);
+                    break;
+                default:
+                    Console.WriteLine("Invalid selection. Please try again.");
+                    Menu(ourAnimal);
+                    break;
+            }
         }
 
         public static void AgeAndPhysicalDescriptionSet(Animal[] ourAnimal)
@@ -95,39 +126,5 @@ namespace ContosoPets
                 Console.WriteLine(dog);
         }
 
-        public static void Run(Animal[] ourAnimal)
-        {
-            switch (Menu())
-            {
-                case "1":
-                    foreach (var animal in ourAnimal)
-                        Console.WriteLine(animal);
-                    break;
-                case "2":
-                    ourAnimal = ourAnimal.Append(Animal.AddAnimal()).ToArray();
-                    break;
-                case "3":
-                    AgeAndPhysicalDescriptionSet(ourAnimal);
-                    break;
-                case "4":
-                    NicknameAndPersonalityDescriptionSet(ourAnimal);
-                    break;
-                case "5":
-                    EditAge(ourAnimal);
-                    break;
-                case "6":
-                    NicknameAndPersonalityDescriptionSet(ourAnimal);
-                    break;
-                case "7":
-                    DisplayCatsWithCharacteristic(ourAnimal);
-                    break;
-                case "8":
-                    DisplayDogsWithCharacteristic(ourAnimal);
-                    break;
-                default:
-                    Console.WriteLine("Invalid selection. Please try again.");
-                    break;
-            }
-        }
     }
 }

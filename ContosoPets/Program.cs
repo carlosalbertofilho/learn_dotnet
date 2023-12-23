@@ -42,4 +42,4 @@ Animal[] ourAnimal =
     }
 };
 
-ClientMessages.Run(ourAnimal);
+ClientMessages.Menu(ourAnimal);
