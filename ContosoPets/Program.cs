@@ -2,7 +2,7 @@
 using ContosoPets;
 
 Animal[] ourAnimal =
-{
+[
     new()
     {
         Id = "d1",
@@ -40,6 +40,6 @@ Animal[] ourAnimal =
         Nickname = "lola",
         Species = "cat"
     }
-};
+];
 
 ClientMessages.Menu(ourAnimal);
