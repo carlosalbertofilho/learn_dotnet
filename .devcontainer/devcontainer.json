@@ -12,7 +12,8 @@
 				"GitHub.copilot",
 				"EditorConfig.EditorConfig",
 				"bierner.markdown-mermaid",
-				"csharpier.csharpier-vscode"
+				"csharpier.csharpier-vscode",
+				"ms-mssql.mssql"
 			]
 		}
 	},
